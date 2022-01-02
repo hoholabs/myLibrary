@@ -25,7 +25,9 @@ function addBookToLibrary(title,author,pages,read) {
 }
 
 addBookToLibrary('You','Joe Mama',69,true);
- addBookToLibrary('The Hobbit','jrr','50',false);
+addBookToLibrary('The Hobbit','jrr','50',false);
+addBookToLibrary('The Hobbit','jrr','50',false);
+addBookToLibrary('The Hobbit','jrr','50',false);
 // addBookToLibrary('The return','jrr','50',false);
 //updateDisplay();
 displayLibrary();
@@ -40,48 +42,48 @@ displayLibrary();
 
 
 
-function displayBook(book){
-  let displayedBook = document.createElement('div');
+// function displayBook(book){
+//   let displayedBook = document.createElement('div');
   
-  displayedBook.className = "book-card"; //create book card
+//   displayedBook.className = "book-card"; //create book card
 
-    //create divs for the book elements
-    let displayedBookTitle = document.createElement('div');
-    let displayedBookAuthor = document.createElement('div');
-    let displayedBookPages = document.createElement('div');
-    let displayedBookRead = document.createElement('div');
-    let displayedBookRemove = document.createElement('button'); //remove book button
-    //assign class names to the elements
-    displayedBookTitle.className = "book-title";
-    displayedBookAuthor.className = "book-author";
-    displayedBookPages.className = "book-pages";
-    displayedBookRead.className = "book-read";
-    displayedBookRemove.className = "book-remove";
-    //change text content of each element
-    displayedBookTitle.textContent = book.title;
-    displayedBookAuthor.textContent = `by ${book.author}`;
-    displayedBookPages.textContent = `${book.pages} pages`;
-    displayedBookRead.textContent = book.read;
-    displayedBookRemove.textContent = "x";
+//     //create divs for the book elements
+//     let displayedBookTitle = document.createElement('div');
+//     let displayedBookAuthor = document.createElement('div');
+//     let displayedBookPages = document.createElement('div');
+//     let displayedBookRead = document.createElement('div');
+//     let displayedBookRemove = document.createElement('button'); //remove book button
+//     //assign class names to the elements
+//     displayedBookTitle.className = "book-title";
+//     displayedBookAuthor.className = "book-author";
+//     displayedBookPages.className = "book-pages";
+//     displayedBookRead.className = "book-read";
+//     displayedBookRemove.className = "book-remove";
+//     //change text content of each element
+//     displayedBookTitle.textContent = book.title;
+//     displayedBookAuthor.textContent = book.author;
+//     displayedBookPages.textContent = `${book.pages} pages`;
+//     displayedBookRead.textContent = book.read;
+//     displayedBookRemove.textContent = "x";
     
-    //add remove eventlistener
-    console.log(book.position);
-    displayedBookRemove.addEventListener("click", function() {
-      myLibrary.splice(book.position, 1);
-      updateDisplay();
-    });
+//     //add remove eventlistener
+//     console.log(book.position);
+//     displayedBookRemove.addEventListener("click", function() {
+//       myLibrary.splice(book.position, 1);
+//       updateDisplay();
+//     });
 
-    //add each element to the book card
-    displayedBook.appendChild(displayedBookTitle);
-    displayedBook.appendChild(displayedBookAuthor);
-    displayedBook.appendChild(displayedBookPages);
-    displayedBook.appendChild(displayedBookRead);
-    displayedBook.appendChild(displayedBookRemove);
+//     //add each element to the book card
+//     displayedBook.appendChild(displayedBookTitle);
+//     displayedBook.appendChild(displayedBookAuthor);
+//     displayedBook.appendChild(displayedBookPages);
+//     displayedBook.appendChild(displayedBookRead);
+//     displayedBook.appendChild(displayedBookRemove);
 
 
-  bookContainer.appendChild(displayedBook)
+//   bookContainer.appendChild(displayedBook)
 
-}
+// }
 
 function displayLibrary(){
   for(let i = 0; i < myLibrary.length; i++){
@@ -104,9 +106,12 @@ function displayLibrary(){
     displayedBookRemove.className = "book-remove";
     //change text content of each element
     displayedBookTitle.textContent = myLibrary[i].title;
-    displayedBookAuthor.textContent = `by ${myLibrary[i].author}`;
-    displayedBookPages.textContent = `${myLibrary[i].pages} pg.`;
-    displayedBookRead.textContent = myLibrary[i].read;
+    displayedBookAuthor.textContent = `${myLibrary[i].author}`;
+    displayedBookPages.textContent = `${myLibrary[i].pages} pages`;
+    if(myLibrary[i].read){
+      displayedBookRead.textContent = "read"
+    }
+    else{displayedBookRead.textContent = "unread"}
     displayedBookRemove.textContent = "x";
     
     //add remove eventlistener
@@ -175,7 +180,3 @@ function updateDisplay(){
 // Add a button on each book’s display to change its read status.
 // To facilitate this you will want to create the function that
 //  toggles a book’s read status on your Book prototype instance.
-
-function toggleRead(){
-
-}

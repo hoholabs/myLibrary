@@ -1,89 +1,126 @@
 :root {
-  background: #fff5ed;
-  color: #2b2116;
+  background: #c9b398;
+  color: #3b2d1f;
+}
+
+#top-bar {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
 }
 
 #add-book-form {
   display: none;
 }
 
+#add-book-button {
+  background-color: mediumspringgreen;
+  height: 25px;
+  width: 25px;
+  border: none;
+  border-radius: 10px;
+  margin-bottom: 5px;
+  margin-left: 10px;
+  -ms-flex-item-align: center;
+      -ms-grid-row-align: center;
+      align-self: center;
+}
+
 #book-container {
-  display: -ms-grid;
-  display: grid;
-  grid-gap: 10px;
-  -ms-grid-columns: 200px 200px;
-      grid-template-columns: 200px 200px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  -webkit-box-pack: space-evenly;
+      -ms-flex-pack: space-evenly;
+          justify-content: space-evenly;
+  gap: 10px;
+  margin: auto;
+  justify-self: center;
 }
 
 .book-card {
-  height: 200px;
-  width: 200px;
-  border: solid 2px red;
+  height: 150px;
+  width: 150px;
+  border: solid 1px black;
+  border: none;
+  background-color: #eee5d9;
   display: -ms-grid;
   display: grid;
-  -ms-grid-columns: 50px 50px 50px 50px;
-      grid-template-columns: 50px 50px 50px 50px;
+  -ms-grid-columns: 1fr;
+      grid-template-columns: 1fr;
+  -ms-grid-rows: 1fr 1fr 25px 25px;
+      grid-template-rows: 1fr 1fr 25px 25px;
+  border-radius: 9px;
 }
 
 .book-card .book-title {
-  width: 200px;
-  height: 50px;
-  border: solid green 2px;
-  -ms-flex-item-align: center;
-      -ms-grid-row-align: center;
-      align-self: center;
-  text-align: center;
-  -ms-grid-row: 1;
-      grid-row-start: 1;
-}
-
-.book-card .book-author {
-  width: 200px;
-  height: 50px;
-  border: solid blue 2px;
-  -ms-flex-item-align: center;
-      -ms-grid-row-align: center;
-      align-self: center;
-  text-align: center;
-  -ms-grid-row: 2;
-      grid-row-start: 2;
-}
-
-.book-card .book-pages {
-  width: 75px;
-  height: 50px;
-  border: solid orange 2px;
-  -ms-flex-item-align: center;
-      -ms-grid-row-align: center;
-      align-self: center;
-  text-align: end;
-  -ms-grid-row: 3;
-      grid-row-start: 3;
-}
-
-.book-card .book-read {
-  width: 75px;
-  height: 50px;
-  border: solid black 2px;
-  -ms-flex-item-align: center;
-      -ms-grid-row-align: center;
-      align-self: center;
-  -ms-grid-row: 3;
-      grid-row-start: 3;
-  grid-column-end: 5;
-  -ms-grid-column-align: end;
-      justify-self: end;
-}
-
-.book-card .book-remove {
-  grid-column-end: 5;
-  grid-row-end: 4;
-  -ms-grid-column-align: end;
-      justify-self: end;
   -ms-flex-item-align: end;
       -ms-grid-row-align: end;
       align-self: end;
+  text-align: center;
+  -ms-grid-row: 1;
+      grid-row-start: 1;
+  -ms-grid-column: 1;
+      grid-column-start: 1;
+  font-size: large;
+}
+
+.book-card .book-author {
+  -ms-flex-item-align: top;
+      -ms-grid-row-align: top;
+      align-self: top;
+  text-align: center;
+  -ms-grid-row: 2;
+      grid-row-start: 2;
+  font-size: small;
+}
+
+.book-card .book-pages {
+  font-size: smaller;
+  -ms-flex-item-align: center;
+      -ms-grid-row-align: center;
+      align-self: center;
+  text-align: center;
+  -ms-grid-row: 3;
+      grid-row-start: 3;
+  -ms-grid-column: 1;
+      grid-column-start: 1;
+}
+
+.book-card .book-read {
+  height: 25px;
+  -ms-grid-row: 4;
+      grid-row-start: 4;
+  -ms-grid-column: 1;
+      grid-column-start: 1;
+  -ms-flex-item-align: end;
+      -ms-grid-row-align: end;
+      align-self: end;
+  border-radius: 10px;
+  border-top-left-radius: 0;
+  border-top-right-radius: 0;
+  background-color: mediumspringgreen;
+  color: green;
+  border: none;
+}
+
+.book-card .book-remove {
+  -ms-grid-column: 1;
+      grid-column-start: 1;
+  -ms-grid-row: 1;
+      grid-row-start: 1;
   height: 25px;
   width: 25px;
+  background-color: #e24949;
+  border-radius: 10px;
+  border-bottom-left-radius: 0;
+  border-top-right-radius: 0;
+  border: none;
+  color: darkred;
 }
 /*# sourceMappingURL=myLibrary.css.map */
