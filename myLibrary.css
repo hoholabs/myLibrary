@@ -1,0 +1,89 @@
+:root {
+  background: #fff5ed;
+  color: #2b2116;
+}
+
+#add-book-form {
+  display: none;
+}
+
+#book-container {
+  display: -ms-grid;
+  display: grid;
+  grid-gap: 10px;
+  -ms-grid-columns: 200px 200px;
+      grid-template-columns: 200px 200px;
+}
+
+.book-card {
+  height: 200px;
+  width: 200px;
+  border: solid 2px red;
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: 50px 50px 50px 50px;
+      grid-template-columns: 50px 50px 50px 50px;
+}
+
+.book-card .book-title {
+  width: 200px;
+  height: 50px;
+  border: solid green 2px;
+  -ms-flex-item-align: center;
+      -ms-grid-row-align: center;
+      align-self: center;
+  text-align: center;
+  -ms-grid-row: 1;
+      grid-row-start: 1;
+}
+
+.book-card .book-author {
+  width: 200px;
+  height: 50px;
+  border: solid blue 2px;
+  -ms-flex-item-align: center;
+      -ms-grid-row-align: center;
+      align-self: center;
+  text-align: center;
+  -ms-grid-row: 2;
+      grid-row-start: 2;
+}
+
+.book-card .book-pages {
+  width: 75px;
+  height: 50px;
+  border: solid orange 2px;
+  -ms-flex-item-align: center;
+      -ms-grid-row-align: center;
+      align-self: center;
+  text-align: end;
+  -ms-grid-row: 3;
+      grid-row-start: 3;
+}
+
+.book-card .book-read {
+  width: 75px;
+  height: 50px;
+  border: solid black 2px;
+  -ms-flex-item-align: center;
+      -ms-grid-row-align: center;
+      align-self: center;
+  -ms-grid-row: 3;
+      grid-row-start: 3;
+  grid-column-end: 5;
+  -ms-grid-column-align: end;
+      justify-self: end;
+}
+
+.book-card .book-remove {
+  grid-column-end: 5;
+  grid-row-end: 4;
+  -ms-grid-column-align: end;
+      justify-self: end;
+  -ms-flex-item-align: end;
+      -ms-grid-row-align: end;
+      align-self: end;
+  height: 25px;
+  width: 25px;
+}
+/*# sourceMappingURL=myLibrary.css.map */
