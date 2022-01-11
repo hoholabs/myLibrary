@@ -4,15 +4,24 @@ let bookContainer = document.getElementById("book-container");
 let dataPosition = 0;
 let myLibrary = [];
 
-function book(title,author,pages,read) {
-  // the constructor...
+// function book(title,author,pages,read) {
+//   // the constructor...
     
+//     this.title = title;
+//     this.author = author;
+//     this.pages = pages;
+//     this.read = read;
+//     // this.position = dataPosition;
+//     // dataPosition++
+// }
+
+class book {
+  constructor(title,author,pages,read){
     this.title = title;
     this.author = author;
     this.pages = pages;
     this.read = read;
-    // this.position = dataPosition;
-    // dataPosition++
+  }
 }
 
 function addBookToLibrary(title,author,pages,read) {
@@ -23,9 +32,7 @@ function addBookToLibrary(title,author,pages,read) {
 
 addBookToLibrary('You','Joe Mama',69,true);
 addBookToLibrary('The Hobbit','jrr','50',false);
-addBookToLibrary('The Hobbit','jrr','50',false);
-addBookToLibrary('The Hobbit','jrr','50',false);
-// addBookToLibrary('The return','jrr','50',false);
+addBookToLibrary('The return','bob','42',false);
 //updateDisplay();
 displayLibrary();
 
