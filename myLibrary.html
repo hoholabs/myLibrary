@@ -14,11 +14,11 @@
     </div>
 
 
-    <form id ="add-book-form">
-        <label for="title">Title:</label><br>
-        <input type="text" id="title" name="title"><br>
-        <label for="author">Author:</label><br>
-        <input type="text" id="author" name="author"><br>
+    <form id ="add-book-form" novalidate>
+        <label for="title">Title:</label><span id = "title-error"></span><br>
+        <input type="text" id="title" name="title" required><br>
+        <label for="author">Author:</label><span id = "author-error"></span><br>
+        <input type="text" id="author" name="author" required><br>
         <label for="pages">Pages:</label><br>
         <input type="text" id="pages" name="pages"><br>
         <label for="read">Read</label>

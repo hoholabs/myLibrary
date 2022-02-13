@@ -65,8 +65,7 @@ function displayLibrary(){
     else{displayedBookRead.textContent = "unread"}
     displayedBookRemove.textContent = "x";
     
-    //add remove eventlistener
-    
+    //add 'remove' eventlistener
     displayedBookRemove.addEventListener("click", function() {
       myLibrary.splice(i, 1);
       updateDisplay();
@@ -104,14 +103,25 @@ addBookButton.addEventListener("click", function() {
 
 addBookForm.addEventListener("submit", (event) => {
   event.preventDefault();
+
+  //form validation
+  if (addBookForm.title.validity.valueMissing) {
+    document.getElementById("title-error").innerHTML = "Title missing";
+    console.log("notitle");
+  } else if(addBookForm.author.validity.valueMissing){
+    document.getElementById("author-error").innerHTML = "Author missing";
+    console.log("notitle");
+  }else{
+  //grab data from the form
   formTitle = addBookForm.title.value;
   formAuthor = addBookForm.author.value;
   formPages = addBookForm.pages.value;
   formRead = addBookForm.read.checked;
- 
+  //use data to add a new book to the library
   addBookToLibrary(formTitle,formAuthor,formPages,formRead);
   addBookForm.style.display = "none";
   updateDisplay();
+  }
 
 });
 
